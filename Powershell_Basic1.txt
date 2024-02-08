@@ -1,0 +1,31 @@
+#To check version of Powershell
+
+PS C:\Users\PTHORAWA> $PSVersionTable
+
+
+
+# To check count of commands loaded in system
+
+PS C:\Users\PTHORAWA> (get-command).count
+1774
+
+
+
+# To see all commands loaded in system
+
+PS C:\Users\PTHORAWA> get-command
+
+
+
+#To check commands containing "Write" word in it (use particular world instead of Write which you want to search)
+
+PS C:\Users\PTHORAWA> get-command -Name *Write*
+
+Output:- 
+
+CommandType     Name
+-----------     ----
+Alias           write -> Write-Output
+Alias           Write-FileSystemCache
+Alias           Write-FileSystemCache
+Function        Write-DtcTransactionsTraceSession
