@@ -1,0 +1,61 @@
+
+# 3 Important commands
+--------------------------------------------------------------------------
+1) Get-Command :- 
+
+Get-Command is a PowerShell cmdlet that gets all commands that are installed on the computer, including cmdlets, aliases, functions, filters, scripts, and applications. To use Get-Command in two lines, you can use the following syntax:
+
+# Get commands by name, with optional wildcards
+Get-Command -Name <String[]>
+
+# Get commands by type, such as Cmdlet, Function, Alias, etc.
+Get-Command -CommandType <CommandTypes>
+
+
+Used to search installed commands in powershell
+e.g :- > Get-Command -Verb Get -Noun *DNS*
+e.g :- > Get-Command -Name *Fire* -CommandType Function
+
+
+2) Get-Help :- 
+
+Get-Help is a PowerShell cmdlet that displays information about PowerShell commands and concepts. To use Get-Help in two lines, you can use the following syntax:
+
+# Get help for a command
+Get-Help <command-name>
+
+# Get help for a module
+Get-Help <module-name>
+
+
+
+Displays "how-to" information in commands
+e.g :- > Get-Help Get-Command -Detailed	
+
+Similar to "man" in Linux/Unix
+e.g :- > man Get-Command -Detailed
+
+Can be used for searching Powershell commands
+e.g :- > Get-Help -Name *DNS*
+
+3) Get-Member :-
+ 
+Get-Member is a PowerShell cmdlet that gets the members, the properties and methods, of objects. You can use it to explore the structure and capabilities of different types of objects, such as strings, arrays, processes, services, etc. You can specify the object by using the InputObject parameter or piping an object to Get-Member. For example:
+
+# Get the members of a string object
+"Hello" | Get-Member
+
+# Get the members of a process object
+Get-Process -Name notepad | Get-Member
+
+You can also use the MemberType parameter to filter the members by their type, such as Properties, Methods, Events, etc. For example:
+
+# Get only the properties of a service object
+Get-Service -Name wuauserv | Get-Member -MemberType Properties
+
+To get information about static members, the members of the class, not of the instance, use the Static parameter. For example:
+
+# Get the static members of the Math class
+[Math] | Get-Member -Static
+
+-------------------------------------------------------------------------------------------------
