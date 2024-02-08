@@ -1,0 +1,45 @@
+#Command used to see all services :-  get-service
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\PTHORAWA> get-service
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  AarSvc_2d0885      Agent Activation Runtime_2d0885
+Running  aciseagent         Cisco AnyConnect Secure Mobility IS.
+
+
+-------------------------------------------------------------
+#Command used to see all Stopped services :- 
+
+PS C:\Users\PTHORAWA> get-service |
+>> Where-Object Status -eq 'Stopped' |
+>> select-object Name,Status
+
+Name                                                    Status
+----                                                    ------
+AarSvc_2d0885                                          Stopped
+AJRouter                                               Stopped
+-----------------------------------------------------------------
+
+#Create a Varible to store all Stopped services(i.e. data which we got from above command.)
+
+PS C:\Users\PTHORAWA> $data = get-service | Where-Object Status -eq 'Stopped' | select-object Name,Status
+
+#To see data stored in data variable
+
+PS C:\Users\PTHORAWA> $data
+
+
+#To store data stored in data variable in CSV file 
+
+PS C:\Users\PTHORAWA> $data | out-file .\File1.csv
+
+#To open CSV file in Notepad
+
+PS C:\Users\PTHORAWA> notepad .\File1.csv
+________________________________________________________
