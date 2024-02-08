@@ -1,0 +1,65 @@
+#Alias
+
+
+An alias is an alternate name or "shorthand name" for a cmdlet or for a command element, such as a function, script, file, or executable file. You can run the command using the alias instead of the executable name.
+
+#To get help and see syntax of alias use
+
+PS C:\Users\PTHORAWA> Get-Help Get-Alias
+
+#You can use the Get-Alias cmdlet to see all the aliases available in your session
+
+PS C:\Users\PTHORAWA> get-alias
+
+--------------------------------------------
+
+#To see Services starting with "M"
+
+PS C:\Users\PTHORAWA> Get-Service -Name M*
+
+
+#To check your computer-name
+
+PS C:\Users\PTHORAWA> hostname
+
+#To see Services starting with "M" with the your computer-name
+
+PS C:\Users\PTHORAWA> Get-Service -Name M* -ComputerName LIN-5XX0518XX
+
+-------------------------------------------------------------
+
+#Keep in mind don't use alias in scripting 
+
+#You can use the Get-Alias cmdlet to see all the aliases available in your session
+
+PS C:\Users\PTHORAWA> get-alias | more
+
+
+# To see aliases associated with the "Service" command
+
+PS C:\Users\PTHORAWA> get-alias -Definition *Service*
+
+CommandType     Name
+-----------     ----
+Alias           gsv -> Get-Service
+Alias           sasv -> Start-Service
+Alias           spsv -> Stop-Service
+
+
+Here "gsv"  is the shortest command which we can use instead of "Get-Service", same for the rest commands.
+
+
+#Now, run above first command using Alias in it.
+
+PS C:\Users\PTHORAWA> gsv -Name M*
+
+Using above command we get same output as of we got for below command.
+
+PS C:\Users\PTHORAWA> Get-Service -Name M*
+
+
+#To see detailed info about "gsv" use help
+
+PS C:\Users\PTHORAWA> help gsv
+-----------------------------------------------------------------
+
