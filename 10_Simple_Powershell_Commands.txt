@@ -1,0 +1,60 @@
+1) Checking Your PowerShell Version: Before diving into scripting, it’s essential to know which version of PowerShell you’re running. Use the following command to display the version details:
+
+> $PSVersionTable.PSVersion
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+2 ) Getting Help: PowerShell provides a built-in help system. To get detailed information about a specific cmdlet (e.g., Get-Process), use:
+
+> Get-Help Get-Process
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+3) Listing All Commands: Discover all available cmdlets, functions, scripts, and aliases in your session with:
+
+> Get-Command
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4) Setting Execution Policy: Control which scripts can run on your system by setting the execution policy. For example:
+
+> Set-ExecutionPolicy RemoteSigned
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+5) Getting System Services: Monitor and manage services installed on your system using:
+
+> Get-Service
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+6) Converting Output to HTML: Convert the output of a command into an HTML formatted table for reports or web content:
+
+> Get-Process | ConvertTo-Html | Out-File process.html
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+7) Exporting to CSV: Export data to a CSV file for analysis and sharing:
+
+> Get-Process | Export-Csv -Path processes.csv
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+8) Sorting Objects: Sort objects by property values (e.g., CPU usage):
+
+> Get-Process | Sort-Object -Property CPU
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+9) Filtering with Where-Object: Retrieve items that match specific conditions (e.g., processes using more than 10% CPU):
+
+> Get-Process | Where-Object { $_.CPU -gt 10 }
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+10) Kill Command: The kill command is commonly used to forcibly terminate a running process. To stop multiple processes at once, specify their relevant process IDs (PIDs) in the command. For example:
+
+> kill 1234,2345
+
+-------------------------------------------------------------------------------------------------------------------------------------------
