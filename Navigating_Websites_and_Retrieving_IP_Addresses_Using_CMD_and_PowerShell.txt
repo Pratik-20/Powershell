@@ -1,0 +1,103 @@
+Open the Command Prompt or Windows PowerShell and run the following commands.
+
+1) Using the “ping” command:
+
+Replace <YourWebsiteName> with the actual URL of the website you want to check:
+ping <YourWebsiteName>
+
+For example, to find the IP address of The Windows Club website, use:
+ping thewindowsclub.com
+
+The command will display relevant statistics, including the website’s IP address, round-trip times, and packets sent and received.
+
+ping www.google.com:
+This command is used to check the connectivity between your computer and a specific website (in this case, Google).
+
+It sends a series of network packets to the specified domain (www.google.com) and measures the response time.
+If successful, it displays information about the response time and the IP address of the website.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+2) explorer "https://www.google.com":
+
+This command opens the default web browser (usually Microsoft Edge) and navigates to the specified URL (in this case, Google).
+It’s a quick way to open a website directly from the command prompt.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+3) Specifically for Microsoft Edge:
+
+start msedge "https://www.google.com":
+
+This command opens the Microsoft Edge browser and directs it to the specified URL (google's website).
+It’s similar to the previous command but explicitly specifies the browser to use (Microsoft Edge).
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+4) Specifically for Google Chrome:
+
+start chrome "https://www.google.com":
+
+This command would open the Google Chrome browser (if installed) and navigate to google's website.
+However, since you’re using the “start” command, it will likely open the default browser (which may not be Chrome).
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+5) nslookup google.com:
+
+The nslookup command is used to query DNS (Domain Name System) servers to retrieve information about a domain.
+In this case, it looks up the IP address associated with the domain name “google.com.”
+
+PS C:\> nslookup google.com
+
+Output:-
+
+Server:  UnKnown
+Address:  192.168.1.1
+
+Non-authoritative answer:
+Name:    google.com
+Addresses:  2607:f8b0:4009:80a::200e
+          172.217.164.142
+
+These commands query DNS records for the domain name google.com and display the associated IP addresses. The “Non-authoritative answer” section provides the resolved IP addresses for the domain.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+6) To open website with IP adress 
+
+start msedge https://142.250.67.206:
+
+This command directly opens Microsoft Edge and navigates to the IP address 142.250.67.206 (which corresponds to Google).
+It bypasses the domain name and directly accesses the website using the IP address.
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+7) Using the “Tracert” command:
+
+The tracert command doesn’t ping the web address directly but shows the fastest connection speed between servers/connections.
+In the Command Prompt, enter the following command (replace <YourWebsiteName> with the actual URL):
+
+tracert <YourWebsiteName>
+tracert google.com
+
+The IP address will be shown in brackets next to the URL.
+
+PS C:\> tracert google.com
+
+Output:- 
+
+Tracing route to google.com [172.217.164.142]
+over a maximum of 30 hops:
+
+  1    <1 ms    <1 ms    <1 ms  192.168.1.254
+  2    <1 ms    <1 ms    <1 ms  192.168.1.1
+
+Trace complete.
+
+These commands initiate a traceroute process, showing the path from your computer to the specified destination (google.com) and the details of each hop along the way. The output displays the IP addresses of intermediate network devices and their response times.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Remember that these commands are specific to Windows operating systems and can be useful for troubleshooting, automation, or quick access to websites from the command line. 🌐👍
+
+
+
+
